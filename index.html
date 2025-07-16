@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenditure Dashboard</title>
+</head>
+<body>
+    <h2>Add Expenditure</h2>
+    <form method="POST" action="/add">
+        Head: <input type="text" name="head" required><br>
+        Subhead: <input type="text" name="subhead" required><br>
+        Amount: <input type="number" name="amount" required><br>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Expenditure Records</h2>
+    <table border="1">
+        <tr>
+            <th>Head</th>
+            <th>Subhead</th>
+            <th>Amount</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/logout">Logout</a>
+</body>
+</html>
