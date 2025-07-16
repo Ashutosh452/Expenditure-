@@ -4,6 +4,12 @@
     <title>Expenditure Dashboard</title>
 </head>
 <body>
+
+    <!-- 👇 Image added here -->
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='nsris.png') }}" alt="Logo" width="300">
+    </div>
+
     <h2>Add Expenditure</h2>
     <form method="POST" action="/add">
         Head: <input type="text" name="head" required><br>
@@ -27,6 +33,7 @@
         </tr>
         {% endfor %}
     </table>
+    
     <a href="/logout">Logout</a>
 </body>
 </html>
